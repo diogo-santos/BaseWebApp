@@ -6,12 +6,40 @@
 <body>
   <!-- the classes 'page-header' and 'btn btn-dark' create bootstrap components.  -->
   <!-- Check out more components here: http://getbootstrap.com/components/ -->
-  <div class="page-header">
-
+  <div>
+    <% include ../helpers/navbar %>
   
     <h1>My Web App from Hubspot</h1>
   </div>
 
+  <!-- error message -->
+  <div class="error-message"></div>
+
+  <!-- Save and retrieve posts from firebase-->
+  <button onclick="handleSignIn()">Login</button>
+
+  <form onsubmit="handleMessageFormSubmit()" action="#">
+    Title:<br>
+    <input id="post-title"><br>
+    Body:<br>
+    <textarea id="post-body"></textarea><br>
+    <button type="submit">Submit</button>
+  </form>
+  <br>
+  
+  <div id="post-listing"></div>
+  <br>
+
+  <!-- Display data from weather api-->
+  <input class="search" type="text" placeholder="Enter city name">
+  <button type="button" onclick="searchWeather()">Search</button>
+  
+  <div class="city"></div>
+
+  <div class="temp"></div>
+  <br>
+
+  <!-- Default base web app-->
   <p>Click on the button for a surprise.</p>
 
   <button onClick="showPicture()" class="btn btn-dark">Click me</button>
